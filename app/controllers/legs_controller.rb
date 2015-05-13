@@ -14,4 +14,15 @@ class LegsController < ApplicationController
     )
     render json:{leg:new_leg}
   end
+  #Read - All
+  def index
+    puts params
+    legs = Leg.where(vacation_id:params[:vacation_id])
+    render json:{legs:legs}
+  end
+  #Read - One
+  def show
+    leg = Leg.find(params[:id])
+    render json:{leg:leg}
+  end
 end
