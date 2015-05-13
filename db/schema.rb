@@ -11,10 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150511175306) do
+ActiveRecord::Schema.define(version: 20150513042849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "legs", force: :cascade do |t|
+    t.integer  "vacation_id"
+    t.string   "starting_city"
+    t.string   "starting_state"
+    t.string   "ending_city"
+    t.string   "ending_state"
+    t.string   "starting_lat"
+    t.string   "starting_lng"
+    t.string   "ending_lat"
+    t.string   "ending_lng"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "vacations", force: :cascade do |t|
     t.string   "name"
