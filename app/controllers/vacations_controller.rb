@@ -39,6 +39,6 @@ class VacationsController < ApplicationController
 
   private
   def account_params
-      params.require(:vacation).permit(:name)
- 	end
+    params.require(:vacation).permit(:name)
+  end
 end

@@ -76,4 +76,18 @@ class LegsController < ApplicationController
     leg = Leg.find(params[:id])
     render json:{leg:leg}
   end
+  #Update
+  def update
+    leg = Leg.find(params[:id])
+    if leg.update(account_params)
+  		render json:{leg:leg.attributes}
+  	else
+  		render json:{errors:leg.errors}
+  	end
+  end
+
+  private
+  def account_params
+      params.require(:leg).permit(:vacation_id, :starting_city, :starting_state, :ending_city, :ending_state, :starting_lat, :starting_lng, :ending_lat, :ending_lng, :marker_position, :home_marker)
+ 	end
 end
