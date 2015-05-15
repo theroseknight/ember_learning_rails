@@ -26,8 +26,10 @@ ActiveRecord::Schema.define(version: 20150513042849) do
     t.string   "starting_lng"
     t.string   "ending_lat"
     t.string   "ending_lng"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.integer  "marker_position"
+    t.boolean  "home_marker",     default: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   create_table "vacations", force: :cascade do |t|
