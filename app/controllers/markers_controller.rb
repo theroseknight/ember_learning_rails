@@ -1,12 +1,13 @@
 class MarkersController < ApplicationController
   #Create
   def create
-    puts params
     render json:{}
   end
   #Read - All
   def index
-    markers = Marker.where(vacation_id:params[:vacation_id])
+    puts params
+    markers = Marker.where(vacation_id:params[:marker][:vacation_id])
+    puts markers.inspect
     render json:{markers:markers}
   end
   #Read - One
@@ -26,6 +27,6 @@ class MarkersController < ApplicationController
 
   private
   def account_params
-      params.require(:marker).permit(:vacation_id, :leg_id, :latitude, :longitude)
+      params.require(:marker).permit(:vacation_id, :leg_id, :latitude, :longitude, :home_marker)
  	end
 end

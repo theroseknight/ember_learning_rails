@@ -12,10 +12,6 @@ class LegsController < ApplicationController
         starting_state:params[:leg][:starting_state],
         ending_city:params[:leg][:ending_city],
         ending_state:params[:leg][:ending_state],
-        starting_lat:params[:leg][:starting_lat],
-        starting_lng:params[:leg][:starting_lng],
-        ending_lat:params[:leg][:ending_lat],
-        ending_lng:params[:leg][:ending_lng],
         marker_position:params[:leg][:marker_position],
         home_marker:params[:leg][:home_marker],
       )
@@ -24,8 +20,6 @@ class LegsController < ApplicationController
       puts last_leg.inspect
       last_leg.starting_city = params[:leg][:ending_city]
       last_leg.starting_state = params[:leg][:ending_state]
-      last_leg.starting_lat = params[:leg][:ending_lat]
-      last_leg.starting_lng = params[:leg][:ending_lng]
       last_leg.save
       legs.push(last_leg)
       puts "here 1"
@@ -39,10 +33,6 @@ class LegsController < ApplicationController
         starting_state:params[:leg][:starting_state],
         ending_city:params[:leg][:ending_city],
         ending_state:params[:leg][:ending_state],
-        starting_lat:params[:leg][:starting_lat],
-        starting_lng:params[:leg][:starting_lng],
-        ending_lat:params[:leg][:ending_lat],
-        ending_lng:params[:leg][:ending_lng],
         marker_position:params[:leg][:marker_position],
         home_marker:params[:leg][:home_marker],
       )
@@ -53,10 +43,6 @@ class LegsController < ApplicationController
         starting_state:params[:leg][:ending_state],
         ending_city:params[:leg][:starting_city],
         ending_state:params[:leg][:starting_state],
-        starting_lat:params[:leg][:ending_lat],
-        starting_lng:params[:leg][:ending_lng],
-        ending_lat:params[:leg][:starting_lat],
-        ending_lng:params[:leg][:starting_lng],
         marker_position:8,
         home_marker:params[:leg][:home_marker],
       )
@@ -88,6 +74,6 @@ class LegsController < ApplicationController
 
   private
   def account_params
-      params.require(:leg).permit(:vacation_id, :starting_city, :starting_state, :ending_city, :ending_state, :starting_lat, :starting_lng, :ending_lat, :ending_lng, :marker_position, :home_marker)
+      params.require(:leg).permit(:vacation_id, :starting_city, :starting_state, :ending_city, :ending_state, :marker_position, :home_marker)
  	end
 end

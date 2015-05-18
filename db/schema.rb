@@ -22,10 +22,6 @@ ActiveRecord::Schema.define(version: 20150515203710) do
     t.string   "starting_state"
     t.string   "ending_city"
     t.string   "ending_state"
-    t.string   "starting_lat"
-    t.string   "starting_lng"
-    t.string   "ending_lat"
-    t.string   "ending_lng"
     t.integer  "marker_position"
     t.boolean  "home_marker",     default: false
     t.datetime "created_at",                      null: false
@@ -37,6 +33,7 @@ ActiveRecord::Schema.define(version: 20150515203710) do
     t.integer  "leg_id"
     t.string   "latitude"
     t.string   "longitude"
+    t.boolean  "home_marker"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

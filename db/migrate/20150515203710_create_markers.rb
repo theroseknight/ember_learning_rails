@@ -5,6 +5,7 @@ class CreateMarkers < ActiveRecord::Migration
       t.integer :leg_id
       t.string :latitude
       t.string :longitude
+      t.boolean :home_marker
       t.timestamps null: false
     end
   end
