@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20150513042849) do
   enable_extension "plpgsql"
 
   create_table "legs", force: :cascade do |t|
-    t.integer  "vacation_id"
+    t.integer  "roadtrip_id"
     t.string   "starting_city"
     t.string   "starting_state"
     t.string   "ending_city"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20150513042849) do
     t.datetime "updated_at",                      null: false
   end
 
-  create_table "vacations", force: :cascade do |t|
+  create_table "roadtrips", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

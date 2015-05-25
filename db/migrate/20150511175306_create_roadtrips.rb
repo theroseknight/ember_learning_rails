@@ -1,6 +1,6 @@
-class CreateVacations < ActiveRecord::Migration
+class CreateRoadtrips < ActiveRecord::Migration
   def change
-    create_table :vacations do |t|
+    create_table :roadtrips do |t|
       t.string :name
       t.timestamps null: false
     end

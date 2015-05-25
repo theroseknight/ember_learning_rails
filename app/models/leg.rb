@@ -1,5 +1,5 @@
 class Leg < ActiveRecord::Base
-  belongs_to :vacation
+  belongs_to :roadtrip
 
   geocoded_by :full_street_address
   after_validation :geocode

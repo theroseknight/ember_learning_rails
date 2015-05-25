@@ -1,4 +1,4 @@
-class Vacation < ActiveRecord::Base
+class Roadtrip < ActiveRecord::Base
   has_many :legs
   accepts_nested_attributes_for :legs
 

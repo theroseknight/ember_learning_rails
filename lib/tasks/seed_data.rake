@@ -1,9 +1,9 @@
 task :create_test_data=>:environment do
-  Vacation.create(
+  Roadtrip.create(
     name: "South East Joy Ride"
   )
   Leg.create(
-    vacation_id: 1,
+    roadtrip_id: 1,
     starting_city:"Miami",
     starting_state:"FL",
     ending_city:"Gainesville",
@@ -12,7 +12,7 @@ task :create_test_data=>:environment do
     home_marker: true
   )
   Leg.create(
-    vacation_id: 1,
+    roadtrip_id: 1,
     starting_city:"Gainseville",
     starting_state:"FL",
     ending_city:"New Orleans",
@@ -21,7 +21,7 @@ task :create_test_data=>:environment do
     home_marker: false
   )
   Leg.create(
-    vacation_id: 1,
+    roadtrip_id: 1,
     starting_city:"New Orleans",
     starting_state:"LA",
     ending_city:"Houston",
@@ -30,7 +30,7 @@ task :create_test_data=>:environment do
     home_marker: false
   )
   Leg.create(
-    vacation_id: 1,
+    roadtrip_id: 1,
     starting_city:"Houston",
     starting_state:"TX",
     ending_city:"Albuquerque",
@@ -39,7 +39,7 @@ task :create_test_data=>:environment do
     home_marker: false
   )
   Leg.create(
-    vacation_id: 1,
+    roadtrip_id: 1,
     starting_city:"Albuquerque",
     starting_state:"NM",
     ending_city:"Las Vegas",
@@ -48,7 +48,7 @@ task :create_test_data=>:environment do
     home_marker: false
   )
   Leg.create(
-    vacation_id: 1,
+    roadtrip_id: 1,
     starting_city:"Las Vegas",
     starting_state:"NV",
     ending_city:"Dallas",
@@ -57,7 +57,7 @@ task :create_test_data=>:environment do
     home_marker: false
   )
   Leg.create(
-    vacation_id: 1,
+    roadtrip_id: 1,
     starting_city:"Dallas",
     starting_state:"TX",
     ending_city:"Gainesville",
@@ -66,7 +66,7 @@ task :create_test_data=>:environment do
     home_marker: false
   )
   Leg.create(
-    vacation_id: 1,
+    roadtrip_id: 1,
     starting_city:"Gainesville",
     starting_state:"FL",
     ending_city:"Miami",
@@ -74,11 +74,11 @@ task :create_test_data=>:environment do
     marker_position:8,
     home_marker: false
   )
-  Vacation.create(
+  Roadtrip.create(
     name: "East Coast Joy Ride"
   )
   Leg.create(
-    vacation_id: 2,
+    roadtrip_id: 2,
     starting_city:"Miami",
     starting_state:"FL",
     ending_city:"Gainesville",
@@ -87,7 +87,7 @@ task :create_test_data=>:environment do
     home_marker: true
   )
   Leg.create(
-    vacation_id: 2,
+    roadtrip_id: 2,
     starting_city:"Gainseville",
     starting_state:"FL",
     ending_city:"Asheville",
@@ -96,7 +96,7 @@ task :create_test_data=>:environment do
     home_marker: false
   )
   Leg.create(
-    vacation_id: 2,
+    roadtrip_id: 2,
     starting_city:"Asheville",
     starting_state:"NC",
     ending_city:"Washington",
@@ -105,7 +105,7 @@ task :create_test_data=>:environment do
     home_marker: false
   )
   Leg.create(
-    vacation_id: 2,
+    roadtrip_id: 2,
     starting_city:"Washington",
     starting_state:"DC",
     ending_city:"New York",
@@ -114,7 +114,7 @@ task :create_test_data=>:environment do
     home_marker: false
   )
   Leg.create(
-    vacation_id: 2,
+    roadtrip_id: 2,
     starting_city:"New York",
     starting_state:"NY",
     ending_city:"Nashville",
@@ -123,7 +123,7 @@ task :create_test_data=>:environment do
     home_marker: false
   )
   Leg.create(
-    vacation_id: 2,
+    roadtrip_id: 2,
     starting_city:"Nashville",
     starting_state:"TN",
     ending_city:"Atlanta",
@@ -132,7 +132,7 @@ task :create_test_data=>:environment do
     home_marker: false
   )
   Leg.create(
-    vacation_id: 2,
+    roadtrip_id: 2,
     starting_city:"Atlanta",
     starting_state:"GA",
     ending_city:"Gainesville",
@@ -141,7 +141,7 @@ task :create_test_data=>:environment do
     home_marker: false
   )
   Leg.create(
-    vacation_id: 2,
+    roadtrip_id: 2,
     starting_city:"Gainesville",
     starting_state:"FL",
     ending_city:"Miami",

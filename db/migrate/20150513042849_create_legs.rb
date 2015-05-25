@@ -1,7 +1,7 @@
 class CreateLegs < ActiveRecord::Migration
   def change
     create_table :legs do |t|
-      t.integer :vacation_id
+      t.integer :roadtrip_id
       t.string :starting_city
       t.string :starting_state
       t.string :ending_city

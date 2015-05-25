@@ -7,7 +7,7 @@ class LegsController < ApplicationController
       puts "I'M IN HERE"
       legs = []
       new_leg = Leg.create(
-        vacation_id:params[:leg][:vacation_id],
+        roadtrip_id:params[:leg][:roadtrip_id],
         starting_city:params[:leg][:starting_city],
         starting_state:params[:leg][:starting_state],
         ending_city:params[:leg][:ending_city],
@@ -16,7 +16,7 @@ class LegsController < ApplicationController
         home_marker:params[:leg][:home_marker],
       )
       legs.push(new_leg)
-      last_leg = Leg.where("vacation_id= ? AND marker_position= ?", params[:leg][:vacation_id], 8)[0]
+      last_leg = Leg.where("roadtrip_id= ? AND marker_position= ?", params[:leg][:roadtrip_id], 8)[0]
       puts last_leg.inspect
       last_leg.starting_city = params[:leg][:ending_city]
       last_leg.starting_state = params[:leg][:ending_state]
@@ -28,7 +28,7 @@ class LegsController < ApplicationController
     else
       legs = []
       first_leg = Leg.create(
-        vacation_id:params[:leg][:vacation_id],
+        roadtrip_id:params[:leg][:roadtrip_id],
         starting_city:params[:leg][:starting_city],
         starting_state:params[:leg][:starting_state],
         ending_city:params[:leg][:ending_city],
@@ -38,7 +38,7 @@ class LegsController < ApplicationController
       )
       legs.push(first_leg)
       last_leg = Leg.create(
-        vacation_id:params[:leg][:vacation_id],
+        roadtrip_id:params[:leg][:roadtrip_id],
         starting_city:params[:leg][:ending_city],
         starting_state:params[:leg][:ending_state],
         ending_city:params[:leg][:starting_city],
@@ -54,7 +54,7 @@ class LegsController < ApplicationController
   #Read - All
   def index
     puts params
-    legs = Leg.where(vacation_id:params[:vacation_id])
+    legs = Leg.where(roadtrip_id:params[:roadtrip_id])
     render json:{legs:legs}
   end
   #Read - One
@@ -74,6 +74,6 @@ class LegsController < ApplicationController
 
   private
   def account_params
-      params.require(:leg).permit(:vacation_id, :starting_city, :starting_state, :ending_city, :ending_state, :marker_position, :home_marker)
+      params.require(:leg).permit(:roadtrip_id, :starting_city, :starting_state, :ending_city, :ending_state, :marker_position, :home_marker)
  	end
 end
