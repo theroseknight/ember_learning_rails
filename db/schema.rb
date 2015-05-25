@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150515203710) do
+ActiveRecord::Schema.define(version: 20150513042849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,20 +22,12 @@ ActiveRecord::Schema.define(version: 20150515203710) do
     t.string   "starting_state"
     t.string   "ending_city"
     t.string   "ending_state"
+    t.string   "latitude"
+    t.string   "longitude"
     t.integer  "marker_position"
     t.boolean  "home_marker",     default: false
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
-  end
-
-  create_table "markers", force: :cascade do |t|
-    t.integer  "vacation_id"
-    t.integer  "leg_id"
-    t.string   "latitude"
-    t.string   "longitude"
-    t.boolean  "home_marker"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
   end
 
   create_table "vacations", force: :cascade do |t|

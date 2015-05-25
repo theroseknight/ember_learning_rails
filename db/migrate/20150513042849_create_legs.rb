@@ -6,6 +6,8 @@ class CreateLegs < ActiveRecord::Migration
       t.string :starting_state
       t.string :ending_city
       t.string :ending_state
+      t.string :latitude
+      t.string :longitude
       t.integer :marker_position
       t.boolean :home_marker, :default => false
       t.timestamps null: false
