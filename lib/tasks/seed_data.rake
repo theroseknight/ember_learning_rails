@@ -1,6 +1,8 @@
 task :create_test_data=>:environment do
   Roadtrip.create(
-    name: "South East Joy Ride"
+    name: "South East Joy Ride",
+    number_of_days: 14,
+    hours_of_sleep: 8
   )
   Leg.create(
     roadtrip_id: 1,
@@ -75,7 +77,9 @@ task :create_test_data=>:environment do
     home_marker: false
   )
   Roadtrip.create(
-    name: "East Coast Joy Ride"
+    name: "East Coast Joy Ride",
+    number_of_days: 7,
+    hours_of_sleep: 8
   )
   Leg.create(
     roadtrip_id: 2,

@@ -2,7 +2,9 @@ class RoadtripsController < ApplicationController
   #Create
   def create
     new_roadtrip = Roadtrip.create(
-      name:params[:roadtrip][:name]
+      name:params[:roadtrip][:name],
+      number_of_days:params[:roadtrip][:number_of_days],
+      hours_of_sleep:params[:roadtrip][:hours_of_sleep]
     )
     render json:{roadtrip:new_roadtrip}
   end
@@ -39,6 +41,6 @@ class RoadtripsController < ApplicationController
 
   private
   def account_params
-    params.require(:roadtrip).permit(:name)
+    params.require(:roadtrip).permit(:name,:number_of_days,:hours_of_sleep)
   end
 end
