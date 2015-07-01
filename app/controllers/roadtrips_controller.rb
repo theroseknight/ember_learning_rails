@@ -6,20 +6,24 @@ class RoadtripsController < ApplicationController
       number_of_days:params[:roadtrip][:number_of_days],
       hours_of_sleep:params[:roadtrip][:hours_of_sleep]
     )
+    
     render json:{roadtrip:new_roadtrip}
   end
+
   #Read - All
   def index
     roadtrips = Roadtrip.all.to_a
     roadtrips.map!{|roadtrip|roadtrip.attributes}
     render json:{roadtrips:roadtrips}
   end
+
   #Read - One
   def show
     roadtrip = Roadtrip.find(params[:id])
     roadtrip = roadtrip.attributes
     render json:{roadtrip:roadtrip}
   end
+
   #Update
   def update
     roadtrip = Roadtrip.find(params[:id])
@@ -29,6 +33,7 @@ class RoadtripsController < ApplicationController
   		render json:{errors:roadtrip.errors}
   	end
   end
+
   #Destroy
   def destroy
     roadtrip=Roadtrip.find(params[:id])

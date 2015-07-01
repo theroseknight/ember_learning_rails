@@ -1,11 +1,10 @@
 class LegsController < ApplicationController
   #Create
   def create
-    puts params[:leg][:home_marker]
-    puts params[:leg][:home_marker].class
+    #All creations other than the first leg - creates new leg and updates return leg starting city to the ending city of the new leg
     if params[:leg][:home_marker] == "false"
-      puts "I'M IN HERE"
       legs = []
+      #Create new leg
       new_leg = Leg.create(
         roadtrip_id:params[:leg][:roadtrip_id],
         starting_city:params[:leg][:starting_city],
@@ -16,17 +15,19 @@ class LegsController < ApplicationController
         home_marker:params[:leg][:home_marker],
       )
       legs.push(new_leg)
+
+      #Update return trip leg starting city with ending city information from new leg
       last_leg = Leg.where("roadtrip_id= ? AND marker_position= ?", params[:leg][:roadtrip_id], 8)[0]
-      puts last_leg.inspect
       last_leg.starting_city = params[:leg][:ending_city]
       last_leg.starting_state = params[:leg][:ending_state]
       last_leg.save
       legs.push(last_leg)
-      puts "here 1"
-      puts legs.inspect
+
       render json:{legs:legs}
+    #First time a leg is created created a return trip leg and the first leg of the journey
     else
       legs = []
+      #Create first leg of the roadtrip
       first_leg = Leg.create(
         roadtrip_id:params[:leg][:roadtrip_id],
         starting_city:params[:leg][:starting_city],
@@ -37,6 +38,8 @@ class LegsController < ApplicationController
         home_marker:params[:leg][:home_marker],
       )
       legs.push(first_leg)
+
+      #Create return trip leg of the roadtrip
       last_leg = Leg.create(
         roadtrip_id:params[:leg][:roadtrip_id],
         starting_city:params[:leg][:ending_city],
@@ -47,28 +50,32 @@ class LegsController < ApplicationController
         home_marker:params[:leg][:home_marker],
       )
       legs.push(last_leg)
-      puts legs.inspect
+
       render json:{legs:legs}
     end
   end
+
   #Read - All
   def index
-    puts params
-    legs = Leg.where(roadtrip_id:params[:roadtrip_id])
+    legs = Roadtrip.find(params[:roadtrip_id]).legs
+
     render json:{legs:legs}
   end
+
   #Read - One
   def show
     leg = Leg.find(params[:id])
+
     render json:{leg:leg}
   end
+
   #Update
   def update
     leg = Leg.find(params[:id])
     if leg.update(account_params)
   		render json:{leg:leg.attributes}
   	else
-  		render json:{errors:leg.errors}
+  		render json:{errors:"fail"}
   	end
   end
 

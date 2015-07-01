@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  root 'home#root'
   resources :roadtrips
   resources :legs
   # The priority is based upon order of creation: first created -> highest priority.
