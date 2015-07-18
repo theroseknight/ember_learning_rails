@@ -34,6 +34,9 @@ ActiveRecord::Schema.define(version: 20150513042849) do
     t.string   "name"
     t.integer  "number_of_days"
     t.integer  "hours_of_sleep"
+    t.string   "car_year"
+    t.string   "car_make"
+    t.string   "car_model"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end

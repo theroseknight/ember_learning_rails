@@ -9,7 +9,10 @@
 Roadtrip.create(
   name: "South East Joy Ride",
   number_of_days: 14,
-  hours_of_sleep: 8
+  hours_of_sleep: 8,
+  car_year: "2012",
+  car_make: "Nissan",
+  car_model: "Versa"
 )
 Leg.create(
   roadtrip_id: 1,
@@ -86,7 +89,10 @@ Leg.create(
 Roadtrip.create(
   name: "East Coast Joy Ride",
   number_of_days: 7,
-  hours_of_sleep: 8
+  hours_of_sleep: 8,
+  car_year: "2012",
+  car_make: "Nissan",
+  car_model: "Versa"
 )
 Leg.create(
   roadtrip_id: 2,
@@ -164,7 +170,10 @@ Leg.create(
 Roadtrip.create(
   name: "Around the Country in 3 Weeks",
   number_of_days: 14,
-  hours_of_sleep: 8
+  hours_of_sleep: 8,
+  car_year: "2012",
+  car_make: "Nissan",
+  car_model: "Versa"
 )
 Leg.create(
   roadtrip_id: 3,
@@ -242,7 +251,10 @@ Leg.create(
 Roadtrip.create(
   name: "Operation Golden Stein",
   number_of_days: 11,
-  hours_of_sleep: 8
+  hours_of_sleep: 8,
+  car_year: "2012",
+  car_make: "Nissan",
+  car_model: "Versa"
 )
 Leg.create(
   roadtrip_id: 4,
@@ -284,7 +296,10 @@ Leg.create(
 Roadtrip.create(
   name: "Let's do it like they do on the Canadian channel",
   number_of_days: 14,
-  hours_of_sleep: 8
+  hours_of_sleep: 8,
+  car_year: "2012",
+  car_make: "Nissan",
+  car_model: "Versa"
 )
 Leg.create(
   roadtrip_id: 5,
@@ -362,7 +377,10 @@ Leg.create(
 Roadtrip.create(
   name: "Our brother from a drunk on tequila while pregnant mother",
   number_of_days: 14,
-  hours_of_sleep: 8
+  hours_of_sleep: 8,
+  car_year: "2012",
+  car_make: "Nissan",
+  car_model: "Versa"
 )
 Leg.create(
   roadtrip_id: 6,
