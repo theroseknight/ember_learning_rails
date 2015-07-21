@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 gem 'puma'
 gem 'rack-cors'
 gem 'geocoder'
+gem 'smarter_csv'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'

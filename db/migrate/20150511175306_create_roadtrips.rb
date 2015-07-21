@@ -7,6 +7,7 @@ class CreateRoadtrips < ActiveRecord::Migration
       t.string :car_year
       t.string :car_make
       t.string :car_model
+      t.string :car_mpg
       t.timestamps null: false
     end
   end

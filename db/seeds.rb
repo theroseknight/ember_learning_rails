@@ -12,7 +12,8 @@ Roadtrip.create(
   hours_of_sleep: 8,
   car_year: "2012",
   car_make: "Nissan",
-  car_model: "Versa"
+  car_model: "Versa",
+  car_mpg: "24"
 )
 Leg.create(
   roadtrip_id: 1,
@@ -92,7 +93,8 @@ Roadtrip.create(
   hours_of_sleep: 8,
   car_year: "2012",
   car_make: "Nissan",
-  car_model: "Versa"
+  car_model: "Versa",
+  car_mpg: "24"
 )
 Leg.create(
   roadtrip_id: 2,
@@ -173,7 +175,8 @@ Roadtrip.create(
   hours_of_sleep: 8,
   car_year: "2012",
   car_make: "Nissan",
-  car_model: "Versa"
+  car_model: "Versa",
+  car_mpg: "24"
 )
 Leg.create(
   roadtrip_id: 3,
@@ -254,7 +257,8 @@ Roadtrip.create(
   hours_of_sleep: 8,
   car_year: "2012",
   car_make: "Nissan",
-  car_model: "Versa"
+  car_model: "Versa",
+  car_mpg: "24"
 )
 Leg.create(
   roadtrip_id: 4,
@@ -299,7 +303,8 @@ Roadtrip.create(
   hours_of_sleep: 8,
   car_year: "2012",
   car_make: "Nissan",
-  car_model: "Versa"
+  car_model: "Versa",
+  car_mpg: "24"
 )
 Leg.create(
   roadtrip_id: 5,
@@ -380,7 +385,8 @@ Roadtrip.create(
   hours_of_sleep: 8,
   car_year: "2012",
   car_make: "Nissan",
-  car_model: "Versa"
+  car_model: "Versa",
+  car_mpg: "24"
 )
 Leg.create(
   roadtrip_id: 6,

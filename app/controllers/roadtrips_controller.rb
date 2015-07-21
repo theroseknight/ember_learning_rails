@@ -1,6 +1,9 @@
 class RoadtripsController < ApplicationController
   #Create
   def create
+    vehicle = Vehicle.where("year = ? AND make = ? AND model = ?",params[:roadtrip][:car_year],params[:roadtrip][:car_make],params[:roadtrip][:car_model] )[0]
+    mpg = vehicle.highway_mpg
+
     new_roadtrip = Roadtrip.create(
       name:params[:roadtrip][:name],
       number_of_days:params[:roadtrip][:number_of_days],
@@ -8,6 +11,7 @@ class RoadtripsController < ApplicationController
       car_year:params[:roadtrip][:car_year],
       car_make:params[:roadtrip][:car_make],
       car_model:params[:roadtrip][:car_model],
+      car_mpg:mpg
     )
 
     render json:{roadtrip:new_roadtrip}
